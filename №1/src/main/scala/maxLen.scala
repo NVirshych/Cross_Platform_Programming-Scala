@@ -27,13 +27,12 @@ object maxLen {
 
 
   def main(args : Array[String]) : Unit ={
+    val file = Source.fromFile("C:\\Users\\Никита\\Desktop\\КПП\\untitled\\src\\main\\scala\\data.txt")  //Файл с данными
+    val list = file.getLines().toList
 
-    val file : Source = Source.fromFile("C:\\Users\\Никита\\Desktop\\КПП\\untitled\\src\\main\\scala\\data.txt")  //Файл с данными
-    val list : List[String] = file.getLines().toList
-
-    println("\nRecursive : Length of the longest word from file is " + maxLen(list, 0))
-
-    println("\nTail recursive : Length of the longest word from file is " + maxLenTR(list, 0, 0))
+    println("\n" + list + "\n")
+    println("Recursive : Length of the longest word is " + maxLen(list, 0))
+    println("Tail recursive : Length of the longest word is " + maxLenTR(list, 0, 0))
 
     file.close()
   }
